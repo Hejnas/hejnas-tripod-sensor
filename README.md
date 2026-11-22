@@ -23,7 +23,7 @@ Any watch or app supporting standard BLE RSC/CSC sensors. Primary test devices: 
 
 ## Status
 
-Early planning – no firmware yet.
+Early planning – no firmware yet. See the [roadmap](ROADMAP.md) for stages and progress.
 
 ## License
 
