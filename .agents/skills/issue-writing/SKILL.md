@@ -35,7 +35,7 @@ The templates in `.github/ISSUE_TEMPLATE/` are the only source of the issue stru
    EOF
    ```
 
-   For a sub-issue of a spec add `--parent <spec number>` and set **Parent spec** in the body. Do not edit the spec – its **Sub-issues** list is the original plan; progress is shown in the native sub-issues panel.
+   For a sub-issue of a spec add `--parent <spec number>` and set **Parent spec** in the body. Do not edit the spec's **Sub-issues** list now; its entry is ticked when the sub-issue's work is verified (see the `pr-writing` skill).
 
 ## Approach – the plan lives in the issue
 
@@ -47,7 +47,7 @@ The templates in `.github/ISSUE_TEMPLATE/` are the only source of the issue stru
 
 This section is the single source of the change-comment rule for all issues, including specs.
 
-The body of an issue or spec is the original agreement and stays unchanged – the only exception is the first fill of **Approach**. Checkboxes in the body (e.g. acceptance criteria) are not ticked; they are confirmed by the pull request checklist. Every later change of scope, requirements, acceptance criteria or approach is added as a comment, only with the user's approval:
+The body of an issue or spec is the original agreement and stays unchanged. There are two exceptions: the first fill of **Approach**, and ticking checkboxes (acceptance criteria, the spec's **Sub-issues** list) when the work is verified – see the `pr-writing` skill. Every later change of scope, requirements, acceptance criteria or approach is added as a comment, only with the user's approval:
 
 ```
 **Change:** <what changes>
