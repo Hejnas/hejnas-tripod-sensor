@@ -45,6 +45,8 @@ Available skills:
 Every change goes through: **issue → branch → commits → pull request → squash merge**.
 Each step starts only on an explicit command from the user; the commands are given in quotes.
 
+**Session start** – before any other work, run `git fetch --prune` and report to the user whether the local `main` is behind `origin/main` and whether the current branch is already merged (`gh pr view <branch> --json state --jq .state`). Only report – do not switch branches or change anything; the instructions and skills read from the working tree may be outdated until the repository is synced.
+
 1. **Issue** – a large topic gets a spec (`spec-writing`), everything else an issue (`issue-writing`). Each ROADMAP stage is implemented as a spec.
 2. **Brainstorm** – discuss the issue with the user: reasons, risks, alternatives, open questions. No files are changed.
 3. **"write plan"** – write the plan into the **Approach** section of the issue (`issue-writing`).
