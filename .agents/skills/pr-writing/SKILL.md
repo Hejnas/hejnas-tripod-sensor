@@ -30,7 +30,9 @@ Check:
 
 ### Last sub-issue of a spec
 
-If this pull request closes the last open sub-issue of its spec (check with `gh issue view <spec number> --json subIssues` or the sub-issues panel):
+The spec is closed only when **every item of the spec's Sub-issues list has a created sub-issue** and this pull request closes the last open one (check the list in the spec body against `gh issue view <spec number> --json subIssues` or the sub-issues panel). If any item of the list has no sub-issue yet, the spec stays open.
+
+In that case:
 
 - add `Closes #<spec number>` to the body, so the spec is closed automatically on merge,
 - if the spec implements a ROADMAP stage, tick that stage in `ROADMAP.md` in this pull request.
