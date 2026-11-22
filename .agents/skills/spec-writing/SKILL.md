@@ -26,7 +26,7 @@ The only source of the template is [`.github/ISSUE_TEMPLATE/spec.md`](../../../.
    EOF
    ```
 
-5. **Create sub-issues** one at a time, when the work on them starts, using the `issue-writing` skill. The **Sub-issues** list in the spec stays as the original plan; progress is shown in the native sub-issues panel.
+5. **Create sub-issues** one at a time, when the work on them starts, using the `issue-writing` skill. The entries of the **Sub-issues** list are not changed; each one is ticked when its sub-issue's work is verified (see the `pr-writing` skill).
 
 ## After creation
 

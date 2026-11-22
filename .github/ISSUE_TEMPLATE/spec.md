@@ -53,7 +53,7 @@ labels: spec
 
 <!--
   The original plan of sub-issues. Title format: <prefix>/<short description>. Prefixes: feat/, bug/, fix/, docs/, chore/.
-  This list is not updated later – progress is shown in the native sub-issues panel.
+  Entries are not changed later; each one is ticked when its sub-issue's work is verified.
 -->
 
 - [ ] [prefix]/[short description]

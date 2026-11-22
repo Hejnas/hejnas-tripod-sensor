@@ -37,9 +37,16 @@ In that case:
 - add `Closes #<spec number>` to the body, so the spec is closed automatically on merge,
 - if the spec implements a ROADMAP stage, tick that stage in `ROADMAP.md` in this pull request.
 
-## 2. Push and open a draft pull request
+## 2. Tick checkboxes, push and open a draft pull request
 
 Only when the verification passes:
+
+1. **Tick checkboxes** – checkboxes are meant to be ticked; this is an allowed edit of the body:
+   - the acceptance criteria in the issue that the verification confirmed,
+   - the issue's entry in the parent spec's **Sub-issues** list, if the issue belongs to a spec.
+
+   Edit with `gh issue edit <number> --body-file -`, changing only the checkboxes.
+2. **Push and open the pull request:**
 
 ```sh
 git push -u origin <branch>
