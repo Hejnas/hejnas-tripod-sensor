@@ -48,13 +48,25 @@ Each step starts only on an explicit command from the user; the commands are giv
 1. **Issue** – a large topic gets a spec (`spec-writing`), everything else an issue (`issue-writing`). Each ROADMAP stage is implemented as a spec.
 2. **Brainstorm** – discuss the issue with the user: reasons, risks, alternatives, open questions. No files are changed.
 3. **"write plan"** – write the plan into the **Approach** section of the issue (`issue-writing`).
-4. **"code"** – create the branch and implement the accepted plan:
+4. **"code"** – sync the local repository, create the branch and implement the accepted plan:
 
-   ```sh
-   gh issue develop <issue number> --name <prefix>/<issue number>-<slug> --checkout
-   ```
+   1. **Update `main`:**
 
-   `<slug>` is the issue title without the prefix, spaces replaced by hyphens, e.g. `chore/7-agent-instructions`.
+      ```sh
+      git switch main
+      git pull --ff-only
+      git fetch --prune
+      ```
+
+      Uncommitted changes are carried over by `git switch`. If git refuses to switch or `git pull --ff-only` fails, stop and ask the user – never stash, reset or discard anything.
+   2. **Delete merged local branches** – for every local branch other than `main`, run `git branch -D <branch>` only if `gh pr view <branch> --json state --jq .state` returns `MERGED`. Other branches are kept.
+   3. **Create the branch from `main`:**
+
+      ```sh
+      gh issue develop <issue number> --name <prefix>/<issue number>-<slug> --checkout
+      ```
+
+      `<slug>` is the issue title without the prefix, spaces replaced by hyphens, e.g. `chore/7-agent-instructions`. Never base a branch on another unmerged branch; if the work depends on an unmerged pull request, wait for its merge or combine the work into one pull request.
 5. **Commit** – `commit-writing`; never commit on `main`; commit only when the user explicitly asks.
 6. **"make PR"** – `pr-writing`: verify the branch, push it and open a draft pull request.
 7. **Merge** – the maintainer marks the pull request ready and squash-merges it. The issue is closed automatically; a spec is closed automatically by the pull request of its last sub-issue.
