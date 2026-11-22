@@ -25,6 +25,7 @@ Check:
 2. **Wiki.** If the change affects knowledge about the device or the project, the wiki is updated and current. *Not applicable until the wiki process is defined.*
 3. **Tests.** The change is covered by tests, or tests are not applicable (e.g. documentation-only changes).
 4. **Form.** Branch name follows the convention; commit messages follow the `commit-writing` skill; no git-ignored material (e.g. `Wiki/Raw/`) is committed.
+5. **Up to date with `main`.** Run `git fetch` and check that the branch contains the latest `origin/main` (`git merge-base --is-ancestor origin/main HEAD`). If it does not, merge it into the branch with `git merge origin/main` – no rebase, no force push – and repeat the verification. On a merge conflict, stop and ask the user.
 
 **If anything does not match**, report the list of discrepancies and **stop** – no push, no pull request. Proposed corrections to an issue or spec are added as change comments – see "Changes after creation" in the `issue-writing` skill – only with the user's approval.
 
